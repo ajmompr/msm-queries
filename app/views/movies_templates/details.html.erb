@@ -1,1 +1,30 @@
 <h1> Movie #<%= params.fetch("the_id") %> details </h1>
+<a href="/movies"> Go back </a>
+<hr>
+
+
+<dl>
+  <dt> Title </dt>
+  <dd> <%= @the_movie.title %> </dd>
+  <dt> Year </dt>
+  <dd> <%= @the_movie.year %> </dd>
+  <dt> Duration </dt>
+  <dd> <%= @the_movie.duration %> </dd>
+  <dt> Description </dt>
+  <dd> <%=  @the_movie.description %> </dd>
+  <dt> Image </dt>
+  <dd> 
+    <img src="<%=@the_movie.image%>" width ="250">
+  </dd>
+  <dt>Director</dt>
+  <% Director.all.each do |a_director|%>
+    <% if a_director.id == @the_movie.director_id %>
+  <dd> <%= a_director.name %> </dd>
+    <% end %>
+  <% end %>
+  <dt> Created at </dt>
+  <dd> <%= @the_movie.created_at %> </dd>
+  <dt> Updated at </dt>
+  <dd> <%= @the_movie.updated_at %> </dd>
+</dl>
+<hr>
