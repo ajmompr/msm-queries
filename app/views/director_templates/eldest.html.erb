@@ -1,6 +1,7 @@
 <h1> Eldest director </h1>
 
-<p> The eldest director in our dataset right now is 
+<p>
+  The eldest director in our dataset right now is 
   <% sorted_director = Director.all.order({ :dob => :desc })%>
   <% @director_old = sorted_director.last %>
   <a href="/directors/<%= @director_old.id %>"> <%= @director_old.name %></a>,
