@@ -16,7 +16,7 @@
     <td><img src="<%= an_actor.image %>" width="250"></td>
     <td> <%= an_actor.name %> </td>
     <td> <%= an_actor.dob %> </td>
-    <td><a href="/actors/:the_id"> Show details </a></td>
+    <td><a href="/actors/<%= an_actor.id %>"> Show details </a></td>
   </tr>
   <% end %>
 </table>
