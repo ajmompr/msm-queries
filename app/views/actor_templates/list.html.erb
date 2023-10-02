@@ -10,12 +10,13 @@
     <th></th>
   </tr>
 
+  <% Actor.all.each do |an_actor|%>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td> Show details </td>
+    <td> <%= an_actor.id %> </td>
+    <td><img src="<%= an_actor.image %>" width="250"></td>
+    <td> <%= an_actor.name %> </td>
+    <td> <%= an_actor.dob %> </td>
+    <td><a href="/actors/:the_id"> Show details </a></td>
   </tr>
-
+  <% end %>
 </table>
