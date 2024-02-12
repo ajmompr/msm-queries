@@ -8,6 +8,12 @@ class DirectorsController < ApplicationController
   end
 
   def eldest
+    sorted_director = Director.all.order(:dob => :desc ).where.not(dob: nil)
+
+    @director_old = sorted_director.last
+
+    @director_bday = @director_old.dob.strftime("%B %w, %Y")
+
     render({ :template => "director_templates/eldest"})
   end
 
